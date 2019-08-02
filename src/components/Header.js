@@ -17,7 +17,7 @@ const Header = () => {
     <AppBar className={`${ns}`}>
       <Toolbar style={{display:'flex',justifyContent:'space-between'}}>
         <h2>CMS</h2>
-        <Link to="/login" onClick={logOut}><Input /></Link>
+        <Link to="/login" onClick={logOut} style={{color:'inherit'}}><Input color="white"/></Link>
       </Toolbar>
     </AppBar>
   )

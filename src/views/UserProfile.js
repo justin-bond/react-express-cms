@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ns = 'no-match'
+const ns = 'user-profile'
 
 const UserProfile = () => {
   return (
