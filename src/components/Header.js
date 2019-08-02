@@ -1,30 +1,25 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from "react-router-dom"
+
+import AppBar from "@material-ui/core/AppBar"
+import Toolbar from "@material-ui/core/Toolbar"
+import Input from "@material-ui/icons/Input";
 
 const ns = 'header'
 
 const Header = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  useEffect(() => {
-    if (localStorage.getItem('JWT')) {
-      setLoggedIn(true)
-    }
-  }, [loggedIn])
 
   const logOut = () => {
     localStorage.removeItem('JWT');
-    setLoggedIn(false)
   }
 
   return (
-    <div className={`${ns}`}>
-      <h2>CMS</h2>
-      {
-        loggedIn &&
-        <Link to="/login" onClick={logOut}>Log out</Link>
-      }
-    </div>
+    <AppBar className={`${ns}`}>
+      <Toolbar style={{display:'flex',justifyContent:'space-between'}}>
+        <h2>CMS</h2>
+        <Link to="/login" onClick={logOut}><Input /></Link>
+      </Toolbar>
+    </AppBar>
   )
 }
 
